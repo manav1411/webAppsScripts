@@ -17,11 +17,12 @@ def send_requests(file_path):
         for line in file:
             # Strip newline and whitespace characters and then build the full URL.
             endpoint = line.strip()
-            full_url = f"{base_url}{endpoint}"
+            full_url = f"{base_url}{endpoint}.bak"
 
             response = s.get(full_url)
             if response.status_code != 404:
-                print(f"URL: {full_url} | Response length: {len(response.content)}, Status code: {response.status_code}")
+                if len(response.content) != 1364:
+                    print(f"URL: {full_url} | Response length: {len(response.content)}, Status code: {response.status_code}")
             if response.status_code == 429:
                 print(f"too many requests! 429.")
                 time.sleep(0.2)
