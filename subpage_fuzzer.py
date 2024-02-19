@@ -1,3 +1,5 @@
+# tried to use this for 'go...bust'
+
 import requests
 from urllib3.exceptions import InsecureRequestWarning
 import time
