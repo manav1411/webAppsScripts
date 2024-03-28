@@ -1,5 +1,3 @@
-# tried to use this for 'go...bust'
-
 import requests
 from urllib3.exceptions import InsecureRequestWarning
 import time
@@ -17,12 +15,11 @@ def send_requests(file_path):
         for line in file:
             # Strip newline and whitespace characters and then build the full URL.
             endpoint = line.strip()
-            full_url = f"{base_url}{endpoint}.bak"
+            full_url = f"{base_url}{endpoint}"
 
             response = s.get(full_url)
             if response.status_code != 404:
-                if len(response.content) != 1364:
-                    print(f"URL: {full_url} | Response length: {len(response.content)}, Status code: {response.status_code}")
+                print(f"URL: {full_url} | Response length: {len(response.content)}, Status code: {response.status_code}")
             if response.status_code == 429:
                 print(f"too many requests! 429.")
                 time.sleep(0.2)

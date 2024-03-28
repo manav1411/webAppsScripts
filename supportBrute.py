@@ -19,13 +19,12 @@ s.proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"} 
 
 url = "https://support.quoccabank.com/raw/"
 
-lowerID = 0 # change bounds
-upperID = 0 # change bounds
-maxTicketNum = 0 # change bounds
+lowerID = 9000 # change bounds
+upperID = 10000 # change bounds
+maxTicketNum = 5 # change bounds
 
 for userIdCounter in range(lowerID, upperID):
     for postIdCounter in range(1, maxTicketNum):
-        time.sleep(0.1)
 
         # Creates the base58 encoded string representing the userId and tickerNum
         string = str(userIdCounter) + ":" + str(postIdCounter)
@@ -44,8 +43,7 @@ for userIdCounter in range(lowerID, upperID):
             continue
 
         break
-        
-        
+
 
 
 

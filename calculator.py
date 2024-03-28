@@ -84,7 +84,7 @@ for i in range(21):
     # Send the request
     response = send_post_request(s, url, payload)
     print(f"response to above:\n{response.content}")
-    if i is 20:
+    if i == 20:
         exit()
 
     #finds the number sum and cookie
