@@ -5,4 +5,4 @@ We chose to document these scripts and other various security tools made, in thi
 
 ## Local Use
 Most scripts can be run through your local python interpreter.\
-e.g. python3 example.py
+e.g. `python3 example.py`
